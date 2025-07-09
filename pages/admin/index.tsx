@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import useSWR from 'swr'
 
-import { Grid, Typography } from '@mui/material'
+import { Box, Grid, Typography, Card, CardContent } from '@mui/material'
 import {
   AccessTimeOutlined,
   AttachMoneyOutlined,
@@ -41,7 +41,27 @@ const DashboardPage = () => {
 
   if (error) {
     console.error(error)
-    return <Typography>Error when loading the information</Typography>
+    return (
+      <Box
+        sx={{
+          minHeight: '100vh',
+          backgroundColor: '#f5f5f5',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center'
+        }}
+      >
+        <Typography
+          sx={{
+            color: '#333',
+            fontSize: '1.5rem',
+            fontWeight: 'medium'
+          }}
+        >
+          Error al cargar la información
+        </Typography>
+      </Box>
+    )
   }
 
   const {
@@ -54,54 +74,149 @@ const DashboardPage = () => {
     notPaidOrders
   } = data!
 
+  const statsData = [
+    {
+      title: numberOfOrders,
+      subtitle: 'Total de órdenes',
+      icon: <CreditCardOutlined sx={{ fontSize: 40, color: '#1976d2' }} />,
+      bgColor: '#e3f2fd'
+    },
+    {
+      title: paidOrders,
+      subtitle: 'Órdenes pagadas',
+      icon: <AttachMoneyOutlined sx={{ fontSize: 40, color: '#2e7d32' }} />,
+      bgColor: '#e8f5e8'
+    },
+    {
+      title: notPaidOrders,
+      subtitle: 'Órdenes pendientes',
+      icon: <CreditCardOffOutlined sx={{ fontSize: 40, color: '#d32f2f' }} />,
+      bgColor: '#ffebee'
+    },
+    {
+      title: numberOfClients,
+      subtitle: 'Clientes',
+      icon: <GroupOutlined sx={{ fontSize: 40, color: '#7b1fa2' }} />,
+      bgColor: '#f3e5f5'
+    },
+    {
+      title: numberOfProducts,
+      subtitle: 'Productos',
+      icon: <CategoryOutlined sx={{ fontSize: 40, color: '#f57c00' }} />,
+      bgColor: '#fff3e0'
+    },
+    {
+      title: productsWithNoInventory,
+      subtitle: 'Productos sin stock',
+      icon: <CancelPresentationOutlined sx={{ fontSize: 40, color: '#d32f2f' }} />,
+      bgColor: '#ffebee'
+    },
+    {
+      title: lowInventory,
+      subtitle: 'Productos con poco stock',
+      icon: <ProductionQuantityLimitsOutlined sx={{ fontSize: 40, color: '#f57c00' }} />,
+      bgColor: '#fff3e0'
+    },
+    {
+      title: refreshIn,
+      subtitle: 'Actualización en',
+      icon: <AccessTimeOutlined sx={{ fontSize: 40, color: '#5e35b1' }} />,
+      bgColor: '#ede7f6'
+    }
+  ]
+
   return (
     <AdminLayout
       title='Dashboard'
-      subTitle='General Stadistics'
-      icon={ <DashboardOutlined /> }
+      subTitle='Estadísticas Generales'
+      icon={<DashboardOutlined />}
     >
-      <Grid container spacing={ 3 }>
-        <SummaryTile
-          title={ numberOfOrders }
-          subTitle='Total orders'
-          icon={ <CreditCardOutlined color='secondary' sx={ { fontSize: 40 } } /> }
-        />
-        <SummaryTile
-          title={ paidOrders }
-          subTitle='Paid orders'
-          icon={ <AttachMoneyOutlined color='success' sx={ { fontSize: 40 } } /> }
-        />
-        <SummaryTile
-          title={ notPaidOrders  }
-          subTitle='Pending orders'
-          icon={ <CreditCardOffOutlined color='error' sx={ { fontSize: 40 } } /> }
-        />
-        <SummaryTile
-          title={ numberOfClients }
-          subTitle='Clients'
-          icon={ <GroupOutlined color='primary' sx={ { fontSize: 40 } } /> }
-        />
-        <SummaryTile
-          title={ numberOfProducts }
-          subTitle='Products'
-          icon={ <CategoryOutlined color='warning' sx={ { fontSize: 40 } } /> }
-        />
-        <SummaryTile
-          title={ productsWithNoInventory }
-          subTitle='No stock products'
-          icon={ <CancelPresentationOutlined color='error' sx={ { fontSize: 40 } } /> }
-        />
-        <SummaryTile
-          title={ lowInventory }
-          subTitle='Low stock products'
-          icon={ <ProductionQuantityLimitsOutlined color='warning' sx={ { fontSize: 40 } } /> }
-        />
-        <SummaryTile
-          title={ refreshIn }
-          subTitle='Update at'
-          icon={ <AccessTimeOutlined color='secondary' sx={ { fontSize: 40 } } /> }
-        />
-      </Grid>
+      <Box
+        sx={{
+          minHeight: '100vh',
+          backgroundColor: '#f8f9fa',
+          padding: 3
+        }}
+      >
+        <Typography
+          variant='h4'
+          component='h1'
+          sx={{
+            mb: 4,
+            fontWeight: 'bold',
+            color: '#2c3e50',
+            textAlign: 'center'
+          }}
+        >
+          Panel de Control
+        </Typography>
+
+        <Grid container spacing={3}>
+          {statsData.map((stat, index) => (
+            <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
+              <Card
+                sx={{
+                  height: '100%',
+                  backgroundColor: 'white',
+                  boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+                  borderRadius: '12px',
+                  transition: 'all 0.3s ease',
+                  cursor: 'pointer',
+                  '&:hover': {
+                    transform: 'translateY(-4px)',
+                    boxShadow: '0 8px 25px rgba(0, 0, 0, 0.15)'
+                  }
+                }}
+              >
+                <CardContent sx={{ p: 3 }}>
+                  <Box
+                    sx={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'space-between',
+                      mb: 2
+                    }}
+                  >
+                    <Box
+                      sx={{
+                        backgroundColor: stat.bgColor,
+                        borderRadius: '12px',
+                        p: 1.5,
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center'
+                      }}
+                    >
+                      {stat.icon}
+                    </Box>
+                    <Typography
+                      variant='h3'
+                      component='div'
+                      sx={{
+                        fontWeight: 'bold',
+                        color: '#2c3e50',
+                        fontSize: '2rem'
+                      }}
+                    >
+                      {stat.title}
+                    </Typography>
+                  </Box>
+                  <Typography
+                    variant='body1'
+                    sx={{
+                      color: '#7f8c8d',
+                      fontWeight: 'medium',
+                      fontSize: '0.95rem'
+                    }}
+                  >
+                    {stat.subtitle}
+                  </Typography>
+                </CardContent>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
+      </Box>
     </AdminLayout>
   )
 }

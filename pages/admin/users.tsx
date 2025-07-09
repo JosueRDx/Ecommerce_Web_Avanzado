@@ -78,8 +78,6 @@ const UsersPage = () => {
           >
             <MenuItem value='admin'>Admin</MenuItem>
             <MenuItem value='client'>Client</MenuItem>
-            <MenuItem value='super-user'>Super user</MenuItem>
-            <MenuItem value='SEO'>SEO</MenuItem>
           </Select>
         )
       }

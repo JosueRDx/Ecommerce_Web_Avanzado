@@ -1,22 +1,18 @@
-import React, { FC } from 'react'
+import { FC } from 'react'
 import { Grid } from '@mui/material'
-
 import { IProduct } from '../../interfaces'
 import ProductCard from './ProductCard'
 
-interface ProductListPorps {
+interface Props {
   products: IProduct[]
 }
 
-const ProductList: FC<ProductListPorps> = ({ products }) => {
+const ProductList: FC<Props> = ({ products }) => {
   return (
-    <Grid container spacing={ 4 }>
-      { products.map(product => (
-        <ProductCard
-          key={ product.slug }
-          product={ product }
-        />
-      )) }
+    <Grid container spacing={4}>
+      {products.map((product) => (
+        <ProductCard key={product.slug} product={product} />
+      ))}
     </Grid>
   )
 }
