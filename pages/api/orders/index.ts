@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import { IOrder } from '../../../interfaces'
-import { getSession } from 'next-auth/react'
+import { getToken } from 'next-auth/jwt'
 import { db } from '../../../database'
 import { Product, Order } from '../../../models'
 import mongoose from 'mongoose'
@@ -25,8 +25,12 @@ const createOrder = async (req: NextApiRequest, res: NextApiResponse<Data>) => {
     const { orderItems, total } = req.body as IOrder
 
     // Check there is a user
-    const session: any = await getSession({ req })
-    if (!session) {
+    const token: any = await getToken({
+        req,
+        secret: process.env.NEXTAUTH_SECRET // ✅ necesario para validar la firma JWT
+    })
+
+    if (!token) {
         return res.status(401).json({ message: 'Need to be authenticated' })
     }
 
@@ -41,7 +45,7 @@ const createOrder = async (req: NextApiRequest, res: NextApiResponse<Data>) => {
     try {
 
         const subTotal = orderItems.reduce((prev, current) => {
-            
+
             const currentProduct = dbProducts.find(prod => prod._id.toString() === current._id)
             const currentPrice = currentProduct!.price
 
@@ -60,7 +64,7 @@ const createOrder = async (req: NextApiRequest, res: NextApiResponse<Data>) => {
         }
 
         // Everything it's fine
-        const userId = session.user._id
+        const userId = token.user._id
         const newOrder = new Order({ ...req.body, isPaid: false, user: userId })
 
         //redondear a 2 decimales
