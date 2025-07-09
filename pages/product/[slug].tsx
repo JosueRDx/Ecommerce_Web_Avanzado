@@ -115,7 +115,7 @@ const ProductPage: NextPage<ProductPageProps> = ({ product }) => {
             }
             <Box sx={ { mt: 3 } }>
               <Typography variant='subtitle2' my={ 1 }>
-                Description
+                Descripción
               </Typography>
               <Typography variant='body2'>
                 { product.description }

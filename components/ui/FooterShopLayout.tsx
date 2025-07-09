@@ -13,10 +13,10 @@ const FooterShopLayout = () => {
       } }
     >
       <Typography variant='h2' component='h2' my={ 2}>
-        <strong>Oh-la-la Shoes</strong>
+        <strong>ANGELOUS</strong>
       </Typography>
       <Typography mb={ 1}>
-        &copy; { currentYear } - All rights reserved - Created by ERROR-404-BIS
+        &copy; { currentYear } - Todos los derechos Reservados - Creado por Angelous Zegarra
       </Typography>
     </Box>
   )

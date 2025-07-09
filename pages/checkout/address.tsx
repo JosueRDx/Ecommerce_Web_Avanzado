@@ -66,7 +66,7 @@ const AddressPage = () => {
     >
       <form onSubmit={ handleSubmit(onSubmitAddress) }>
         <Typography variant='h1' component='h1' my={ 4 }>
-          Address
+          Dirección
         </Typography>
         <Grid container spacing={ 1 }>
           <Grid item xs={ 12 } sm={ 6 }>
@@ -191,7 +191,7 @@ const AddressPage = () => {
               py: 1
             } }
           >
-            Check out order
+            Consultar Pedido
           </Button>
         </Box>
       </form>

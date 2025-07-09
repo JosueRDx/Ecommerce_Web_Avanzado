@@ -11,15 +11,15 @@ const HomePage: NextPage = () => {
 
   return (
     <ShopLayout
-      title={ 'Oh-la-la-Shoes | Home' }
-      pageDescription='Find the best shoes at the best price'
+      title={ 'ANGELOUS | Inicio' }
+      pageDescription='Encuentra las mejores zapatillas al mejor precio'
     >
       <>
         <Typography variant='h1' component='h1' my={ 1 }>
-          Shop
+          ANGELOUS
         </Typography>
         <Typography variant='h2' component='h2' sx={ { mb: 2 } }>
-          All products
+          Productos:
         </Typography>
         {
           isLoading ?

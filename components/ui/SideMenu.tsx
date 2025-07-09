@@ -70,7 +70,7 @@ const SideMenu = () => {
               onChange={ (e) => setSearchTerm(e.target.value) }
               onKeyPress={ (e) => e.key === 'Enter' ? onSearchTerm() : null }
               type='text'
-              placeholder='Search...'
+              placeholder='Buscar...'
               endAdornment={
                 <InputAdornment position='end'>
                   <IconButton
@@ -105,7 +105,7 @@ const SideMenu = () => {
                     <ListItemIcon aria-label='go to my orders'>
                       <ConfirmationNumberOutlined />
                     </ListItemIcon>
-                    <ListItemText primary={ 'My orders' } />
+                    <ListItemText primary={ 'Mis Pedidos' } />
                   </ListItem>
                 </Button>
               </>
@@ -200,7 +200,7 @@ const SideMenu = () => {
                   >
                     <LoginOutlined />
                   </ListItemIcon>
-                  <ListItemText primary={ 'Exit' } />
+                  <ListItemText primary={ 'Salir' } />
                 </ListItem>
               </Button>
             )
@@ -220,7 +220,7 @@ const SideMenu = () => {
                   >
                     <VpnKeyOutlined />
                   </ListItemIcon>
-                  <ListItemText primary={ 'Login' } />
+                  <ListItemText primary={ 'Iniciar Sesión' } />
                 </Button>
               </ListItem>
             )
@@ -250,7 +250,7 @@ const SideMenu = () => {
                     <ListItemIcon aria-label='products'>
                       <CategoryOutlined />
                     </ListItemIcon>
-                    <ListItemText primary={ 'Products' } />
+                    <ListItemText primary={ 'Productos' } />
                   </Button>
                 </ListItem>
                 <ListItem >
@@ -261,7 +261,7 @@ const SideMenu = () => {
                     <ListItemIcon aria-label='orders'>
                       <ConfirmationNumberOutlined />
                     </ListItemIcon>
-                    <ListItemText primary={ 'Orders' } />
+                    <ListItemText primary={ 'Ordenes' } />
                   </Button>
                 </ListItem>
                 <ListItem >
@@ -272,7 +272,7 @@ const SideMenu = () => {
                     <ListItemIcon aria-label='users'>
                       <AdminPanelSettings />
                     </ListItemIcon>
-                    <ListItemText primary={ 'Users' } />
+                    <ListItemText primary={ 'Usuarios' } />
                   </Button>
                 </ListItem>
               </>

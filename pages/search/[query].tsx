@@ -21,12 +21,12 @@ const SearchPage: NextPage<SearchPageProps> = ({
 
   return (
     <ShopLayout
-      title={ 'Oh-la-la-Shoes | Search' }
+      title={ 'ANGELOUS | BUSCAR' }
       pageDescription='Find the best shoes at the best price'
     >
       <>
         <Typography variant='h1' component='h1'>
-          Search products
+          Buscar Productos
         </Typography>
         {
           foundProducts ?
@@ -41,7 +41,7 @@ const SearchPage: NextPage<SearchPageProps> = ({
             :
             <>
               <Typography variant='h2' component='h2' sx={ { mb: 1 } }>
-                No products found:
+                NO LO ENCONTRE:
                 <Box
                   component='span'
                   color='#3A64D8'

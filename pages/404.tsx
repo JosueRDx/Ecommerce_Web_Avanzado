@@ -5,7 +5,7 @@ import ShopLayout from '../components/layouts/ShopLayout'
 const Custom404 = () => {
   return (
     <ShopLayout
-      title='Oh-la-la-Shoes | Not Found'
+      title='ANGELOUS | Not Found'
       pageDescription='Nothing to show here'
     >
       <Box

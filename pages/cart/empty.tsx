@@ -27,12 +27,12 @@ const EmptyPage = () => {
           alignItems='center'
           gap='12px'
         >
-          <Typography>No items in the shopping cart</Typography>
+          <Typography>No tiene nada aqui Chupapi</Typography>
           <NextLink href='/' passHref className='btn-link-primary-link'>
             <Typography
               className='btn-link-primary'
             >
-              Back to store
+              Regresar a la Tienda
             </Typography>
           </NextLink>
         </Box>

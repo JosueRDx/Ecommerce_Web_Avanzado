@@ -11,15 +11,15 @@ const MenPage: NextPage = () => {
 
   return (
     <ShopLayout
-      title={ 'Oh-la-la-Shoes | Men' }
+      title={ 'ANGELOUS | Hombre' }
       pageDescription='Find the best shoes at the best price for men'
     >
       <>
         <Typography variant='h1' component='h1'>
-          Men
+          HOMBRES
         </Typography>
         <Typography variant='h2' component='h2' sx={ { mb: 1 } }>
-          Products for men
+          ANGELOUS TE PONE FINO!
         </Typography>
         {
           isLoading ?

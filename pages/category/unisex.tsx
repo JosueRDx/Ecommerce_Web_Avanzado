@@ -11,15 +11,15 @@ const UnisexPage: NextPage = () => {
 
   return (
     <ShopLayout
-      title={ 'Oh-la-la-Shoes | Unisex' }
+      title={ 'ANGELOUS | Unisex' }
       pageDescription='Find the best shoes at the best price for unisex gender'
     >
       <>
         <Typography variant='h1' component='h1'>
-          Unisex
+          UNISEX
         </Typography>
         <Typography variant='h2' component='h2' sx={ { mb: 1 } }>
-          Products for unisex
+          ANGELOUS LE SABE!
         </Typography>
         {
           isLoading ?

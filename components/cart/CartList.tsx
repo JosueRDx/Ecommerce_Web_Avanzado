@@ -98,7 +98,7 @@ const CartList: FC<CartListPorps> = ({ editable = false, products }) => {
                   aria-label='remove'
                   onClick={ () => removeCartProduct(product as ICartProduct) }
                 >
-                  Remove
+                  Remover
                 </Button>
               }
             </Grid>

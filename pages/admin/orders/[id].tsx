@@ -54,12 +54,12 @@ const OrderPage: NextPage<OrderPagProps> = ({ order }) => {
             <Card className='summary-card'>
               <CardContent>
                 <Typography variant='h2' mb={ 4 }>
-                  Summary ({ order.numberOfItems } { order.numberOfItems > 1 ? 'products' : 'product' })
+                  Total ({ order.numberOfItems } { order.numberOfItems > 1 ? 'products' : 'product' })
                 </Typography>
                 <Divider sx={ { my: 1 } } />
                 <Box display='flex' justifyContent='space-between' my={ 1 }>
                   <Typography variant='subtitle1' >
-                    Delivery address
+                    Direccion de entrega
                   </Typography>
                 </Box>
                 <Typography>{ shippingAddress.firstName } { shippingAddress.lastName }</Typography>

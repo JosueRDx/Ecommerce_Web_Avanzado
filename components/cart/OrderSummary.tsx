@@ -22,7 +22,7 @@ const OrderSummary: FC<OrderSummaryProps> = ({ orderValues }) => {
       { /* Amount of products */ }
       <Grid item xs={ 6 }>
         <Typography>
-          Products:
+          Productos:
         </Typography>
       </Grid>
       <Grid item xs={ 6 } display='flex' justifyContent='end'>

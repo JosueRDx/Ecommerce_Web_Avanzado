@@ -11,15 +11,15 @@ const KidsPage: NextPage = () => {
 
   return (
     <ShopLayout
-      title={ 'Oh-la-la-Shoes | Kids' }
+      title={ 'ANGELOUS | Niños' }
       pageDescription='Find the best shoes at the best price for your kids'
     >
       <>
         <Typography variant='h1' component='h1'>
-          Kids
+          NIÑOS
         </Typography>
         <Typography variant='h2' sx={ { mb: 1 } }>
-          Products for kids
+          ANGELOUS VISTE A TUS WAWITAS!
         </Typography>
         {
           isLoading ?

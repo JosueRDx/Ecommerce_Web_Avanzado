@@ -33,7 +33,7 @@ const CartPage = () => {
     >
       <>
         <Typography variant='h1' component='h1' my={ 4 }>
-          Shopping cart
+          Carrito de Compras
         </Typography>
         <Grid container spacing={ 2 }>
           <Grid item xs={ 12 } sm={ 7 }>
@@ -43,7 +43,7 @@ const CartPage = () => {
             <Card className='summary-card'>
               <CardContent>
                 <Typography variant='h2' mb={ 3 }>
-                  Order
+                  Orden
                 </Typography>
                 <Divider sx={ { my: 1 } } />
                 <OrderSummary />
@@ -59,7 +59,7 @@ const CartPage = () => {
                       textTransform: 'uppercase'
                     } }
                   >
-                    Checkout
+                    Verificar
                   </Button>
                 </Box>
               </CardContent>

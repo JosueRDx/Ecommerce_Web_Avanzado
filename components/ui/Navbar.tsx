@@ -43,7 +43,7 @@ const Navbar = () => {
               height='50'
               style={ { borderRadius: '50%' } }
             />
-            <Typography sx={ { ml: 0.5 } }>Shop</Typography>
+            <Typography sx={ { ml: 0.5 } }>ANGELOUS</Typography>
         </NextLink>
         <Box flex={ 1 } />
         <Box
@@ -62,7 +62,7 @@ const Navbar = () => {
                   }
                 } }
               >
-                Men
+                Hombre
               </Button>
           </NextLink>
           <NextLink href='/category/women' passHref>
@@ -76,7 +76,7 @@ const Navbar = () => {
                   }
                 } }
               >
-                Women
+                Mujer
               </Button>
           </NextLink>
           <NextLink href='/category/unisex' passHref>
@@ -104,7 +104,7 @@ const Navbar = () => {
                   }
                 } }
               >
-                Kids
+                Niños
               </Button>
           </NextLink>
         </Box>
@@ -166,7 +166,7 @@ const Navbar = () => {
           onClick={ toggleSideMenu }
           aria-label='menu open and close'
         >
-          Menu
+          Menú
         </Button>
       </Toolbar>
     </AppBar>

@@ -49,7 +49,7 @@ const SummaryPage = () => {
     >
       <>
         <Typography variant='h1' component='h1' my={ 4 }>
-          Orden summary
+          Resumen del Pedido
         </Typography>
         <Grid container spacing={ 2 }>
           <Grid item xs={ 12 } sm={ 7 }>
@@ -59,12 +59,12 @@ const SummaryPage = () => {
             <Card className='summary-card'>
               <CardContent>
                 <Typography variant='h2' component='h2' mb={ 4 }>
-                  Summary ({ numberOfItems } { numberOfItems === 1 ? 'Product' : 'Products' })
+                  Total ({ numberOfItems } { numberOfItems === 1 ? 'Product' : 'Products' })
                 </Typography>
                 <Divider sx={ { my: 1 } } />
                 <Box display='flex' justifyContent='space-between' my={ 1 }>
                   <Typography variant='subtitle1' >
-                    Delivery address
+                    Direccion de entrega
                   </Typography>
                   <NextLink href='/checkout/address' passHref>
                     Edit
@@ -96,7 +96,7 @@ const SummaryPage = () => {
                       py: 1
                     } }
                   >
-                    Confirm order
+                    Confirmar orden
                   </Button>
                   <Chip
                     color='error'
